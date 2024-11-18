@@ -1,0 +1,11 @@
+firstName,lastName,age,salary
+Sophia,Roberts,34,85000
+Liam,Carter,41,120000
+Ava,Johnson,29,68000
+Ethan,Parker,36,95000
+Olivia,Thompson,25,52000
+Mason,Brooks,38,110000
+Emma,Davis,30,74000
+Noah,Mitchell,27,62000
+Charlotte,Harris,33,98000
+James,Wilson,45,145000
