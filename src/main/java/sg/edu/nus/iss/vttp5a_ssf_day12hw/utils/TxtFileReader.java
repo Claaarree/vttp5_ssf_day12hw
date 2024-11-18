@@ -5,20 +5,24 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TxtFileReader {
     
-    // File file = new File(".\\src\\main\\resources\\static\\text\\employees.txt");
-    private File file = new File("C:\\Users\\Clare Lau\\VTTP_SSF\\vttp5a-ssf-day12hw\\src\\main\\resources\\static\\text\\employees.txt");
+    //Both absolute and relative file paths work! :)
+    private File file = new File(".\\src\\main\\resources\\static\\text\\employees.txt");
+    // private File file = new File("C:\\Users\\Clare Lau\\VTTP_SSF\\vttp5a-ssf-day12hw\\src\\main\\resources\\static\\text\\employees.txt");
     private List<String> linesRead;
 
     public List<String> readFile(){
+        linesRead = new ArrayList<>();
         try {
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             String line = br.readLine(); //reading the first heading row
-            while (line != null){
+            while ((line = br.readLine()) != null){
+                // System.out.println(line);
                 linesRead.add(line);
             }
             br.close();
