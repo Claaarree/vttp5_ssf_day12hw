@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.MultiValueMap;
 
 import sg.edu.nus.iss.vttp5a_ssf_day12hw.model.Employee;
 import sg.edu.nus.iss.vttp5a_ssf_day12hw.repo.EmployeeRepo;
@@ -16,5 +17,9 @@ public class EmployeeService {
 
     public List<Employee> getEmployees(){
         return empRepo.getEmployees();
+    }
+
+    public void addNewEmployee(MultiValueMap<String, String> form) {
+        empRepo.addNewEmployee(form);
     }
 }

@@ -6,3 +6,7 @@
 2) Read the file
 3) Loop and put the list of employee records into an Employee arraylist.
 4) Output the list using Thymeleaf into an employeelist.html page
+
+# Task 2
+1) Create a newEmployee.html for creation of new employees
+2) write new employee to existing employee.txt file

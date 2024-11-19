@@ -4,19 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.util.MultiValueMap;
 
 import sg.edu.nus.iss.vttp5a_ssf_day12hw.model.Employee;
-import sg.edu.nus.iss.vttp5a_ssf_day12hw.utils.TxtFileReader;
+import sg.edu.nus.iss.vttp5a_ssf_day12hw.utils.TxtFileReaderWriter;
 
 @Repository
 public class EmployeeRepo {
-    private TxtFileReader tfr = new TxtFileReader();
+    private TxtFileReaderWriter tfrw = new TxtFileReaderWriter();
     private List<Employee> employeesList;
 
     public List<Employee> getEmployees(){
         employeesList = new ArrayList<>();
 
-        List<String> linesRead = tfr.readFile();
+        List<String> linesRead = tfrw.readFile();
         for (String line : linesRead){
             String firstName = line.split(",")[0];
             String lastName = line.split(",")[1];
@@ -28,6 +29,16 @@ public class EmployeeRepo {
         }
 
         return employeesList;
+    }
+
+    public void addNewEmployee(MultiValueMap<String, String> form) {
+        String firstName = form.getFirst("firstName");
+        String lastName = form.getFirst("lastName");
+        String age = form.getFirst("age");
+        String salary = form.getFirst("salary");
+
+        String line = firstName + "," + lastName + "," + age + "," + salary;
+        tfrw.writeFile(line);
     }
 
 }

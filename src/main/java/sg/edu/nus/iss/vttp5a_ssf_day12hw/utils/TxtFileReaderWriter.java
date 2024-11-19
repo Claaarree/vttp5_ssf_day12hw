@@ -1,14 +1,16 @@
 package sg.edu.nus.iss.vttp5a_ssf_day12hw.utils;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TxtFileReader {
+public class TxtFileReaderWriter {
     
     //Both absolute and relative file paths work! :)
     private File file = new File(".\\src\\main\\resources\\static\\text\\employees.txt");
@@ -37,5 +39,21 @@ public class TxtFileReader {
         }
 
         return linesRead;
+    }
+
+    public void writeFile(String line){
+        try {
+            FileWriter fw = new FileWriter(file, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("\n" + line);
+
+            bw.flush();
+            fw.flush();
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+            System.out.println("Error in writing to file!");
+            e.printStackTrace();
+        }
     }
 }

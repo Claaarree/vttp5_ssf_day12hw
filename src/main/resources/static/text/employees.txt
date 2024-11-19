@@ -9,3 +9,5 @@ Emma,Davis,30,74000
 Noah,Mitchell,27,62000
 Charlotte,Harris,33,98000
 James,Wilson,45,145000
+Jennifer,Jennings,70,50000
+Bobby,Flay,48,125000
